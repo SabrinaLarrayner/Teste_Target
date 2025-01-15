@@ -4,19 +4,19 @@
 IMPORTANTE: Esse número pode ser informado através de qualquer entrada de sua preferência ou pode ser previamente definido no código;
 */
 
+function generateFibonacciSequence(limit) {
+  const sequence = [0, 1];
+  while (true) {
+    const nextValue = sequence[sequence.length - 1] + sequence[sequence.length - 2];
+    if (nextValue > limit) break;
+    sequence.push(nextValue);
+  }
+  return sequence;
+}
+
 
 function isFibonacciNumber(num) {
     if (num < 0) return false;
-  
-    function generateFibonacciSequence(limit) {
-      const sequence = [0, 1];
-      while (true) {
-        const nextValue = sequence[sequence.length - 1] + sequence[sequence.length - 2];
-        if (nextValue > limit) break;
-        sequence.push(nextValue);
-      }
-      return sequence;
-    }
   
     const fibonacciSequence = generateFibonacciSequence(num);
   
