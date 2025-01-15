@@ -133,13 +133,15 @@ const faturamentoDiario = [
 	}
 ]
 
-const menorValor = Math.min(...faturamentoDiario.map(x => x.valor))
-const maiorValor = Math.max(...faturamentoDiario.map(x => x.valor))
+const faturamentoDiarioValores = faturamentoDiario.map(x => x.valor)
+
+const menorValor = Math.min(...faturamentoDiarioValores)
+const maiorValor = Math.max(...faturamentoDiarioValores)
 
 
 console.log("Menor valor > ", menorValor)
 console.log("Maior valor > ", maiorValor)
 
-const totalFaturamento = faturamentoDiario.map(x => x.valor).reduce((accumulator, value) => accumulator + value)
+const totalFaturamento = faturamentoDiarioValores.reduce((accumulator, value) => accumulator + value)
 
 console.log("TotalFaturado", totalFaturamento)
